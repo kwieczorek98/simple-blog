@@ -3,16 +3,17 @@
 ini_set("error_reporting", "true");
 error_reporting(E_ALL);
 
-$config = array(
+$config['config'] = array(
     "db" => array(
-        "dbName" => "simple-blog-php",
+        //"dbName" => "",
         "username" => "root",
         "password" => "",
-        "host" => "localhost"
+        "host" => "mysql:host=127.0.0.1;dbname=simple-blog-php"
     ),
     "urls" => array(
         "baseUrl" => "http://127.0.0.1:8000/" //base url
     )
 );
+
 
 ?>
