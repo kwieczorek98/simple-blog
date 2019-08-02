@@ -11,7 +11,7 @@ $config['config'] = array(
         "host" => "mysql:host=127.0.0.1;dbname=simple-blog-php"
     ),
     "urls" => array(
-        "baseUrl" => "http://127.0.0.1:8000/" //base url
+        "baseUrl" => "index.php" //base url
     )
 );
 
