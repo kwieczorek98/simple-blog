@@ -1,5 +1,6 @@
 <?php
-	include "config/config.php";
+  include "config/config.php";
+  include "functions/functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title><?php basename($_SERVER["PHP_SELF"]); ?></title>
+  <title><?php $functions->getPageTitle(basename($_SERVER["PHP_SELF"]));?></title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
