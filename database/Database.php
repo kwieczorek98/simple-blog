@@ -40,7 +40,7 @@
                     foreach ($posts as $post) {
                         
                     echo'<div class="post-preview">
-                        <a href="post.html">
+                        <a href="post.php?id='.$post->id.'">
                             <h2 class="post-title">
                             '.$post->post_title.'
                             </h2>
@@ -53,6 +53,20 @@
                             on '.$post->created_at.'</p>
                         </div>';
                     }
+            }
+
+        public function selectOnePost($id)
+            {
+                $sql = 'SELECT * FROM posts WHERE id=:id';
+                $stmt = $this->conn->prepare($sql);
+                $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+                $stmt->execute();
+                $posts = $stmt->fetchAll(PDO::FETCH_OBJ);
+                
+                foreach ($posts as $post) {
+                    echo $post->post_description;
+                }
+            
             }
     }
 
