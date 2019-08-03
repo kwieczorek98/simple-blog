@@ -1,6 +1,6 @@
 <?php
 
-    require ('../config/config.php');
+    //require ('../config/config.php');
 
     class Database {
 
@@ -19,21 +19,48 @@
                 );
                 
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    echo "Connected successfully"; 
+                    //echo "Connected successfully"; 
                 }
 
             catch(PDOException $e)
                 {
-                echo "Connection failed: " . $e->getMessage();
+                //echo "Connection failed: " . $e->getMessage();
             }
 
             
         }
+
+        public function selectAllPosts()
+            {
+                $sql = 'SELECT * FROM posts';
+                $stmt = $this->conn->prepare($sql);
+                $stmt->execute();
+                $posts = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+                    foreach ($posts as $post) {
+                        
+                    echo'<div class="post-preview">
+                        <a href="post.html">
+                            <h2 class="post-title">
+                            '.$post->post_title.'
+                            </h2>
+                            <h3 class="post-subtitle">
+                            '.$post->post_subtitle.'
+                            </h3>
+                        </a>
+                        <p class="post-meta">Posted by
+                            <a href="#">Start Bootstrap</a>
+                            on '.$post->created_at.'</p>
+                        </div>';
+                    }
+            }
     }
 
     //Connect
 
-    new Database();
-        
+    $conn  = new Database();
 
+    $posts = new Database();
+    
+   
     

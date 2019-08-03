@@ -1,5 +1,7 @@
 <?php
 
+    
+
     class Functions {
 
         public function getPageTitle($path = array())
