@@ -18,10 +18,10 @@
             {
                 //add later form config.php
                 $menu = array(
-                    "home" => "index.php",
+                    "blog" => "index.php",
                     "about" => "about.php",
                     "contact" => "contact.php",
-                    "sample-post" => "post.php"
+                    "sign-in" => "post.php"
                 );
 
                 foreach($menu as $menuName => $menuLink){

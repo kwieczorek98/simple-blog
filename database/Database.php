@@ -32,7 +32,7 @@
 
         public function selectAllPosts()
             {
-                $sql = 'SELECT * FROM posts';
+                $sql = 'SELECT * FROM posts ORDER BY id DESC';
                 $stmt = $this->conn->prepare($sql);
                 $stmt->execute();
                 $posts = $stmt->fetchAll(PDO::FETCH_OBJ);
